@@ -10,8 +10,11 @@
     "test": "jest"
   },
   "dependencies": {
+    "@mdi/font": "^7.2.96",
+    "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.25.3",
     "nuxt": "^2.15.8",
+    "nuxt-material-design-icons": "^1.0.4",
     "vue": "^2.7.10",
     "vue-server-renderer": "^2.7.10",
     "vue-template-compiler": "^2.7.10"

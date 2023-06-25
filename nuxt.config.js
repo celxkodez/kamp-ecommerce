@@ -31,11 +31,15 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    '~/modules/material-design-icons.js'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/pwa',
+    'nuxt-material-design-icons',
   ],
+
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
