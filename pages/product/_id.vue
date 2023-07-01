@@ -155,6 +155,22 @@
 
 <script>
 export default {
-  name: 'IndexPage'
+  name: 'IndexPage',
+  layout: 'app',
+  data() {
+    return {
+      product: null,
+    }
+  },
+  async created() {
+    const productResponse = await this.$axios.get(`/shop/product/${this.$route.params.id}`)
+
+    if (! productResponse.data.status) {
+      throw({ statusCode: 404, message: productResponse.data?.message })
+    }
+    this.product = productResponse.data.data
+
+    console.log('product', this.product)
+  }
 }
 </script>
