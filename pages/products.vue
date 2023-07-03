@@ -33,11 +33,11 @@
                     </p>
                     <div class="flex justify-between items-center mt-3">
                       <span class="font-bold text-lg"
-                        >$ {{ product.price ?? 0 }}</span
+                        >KES {{ product.price ?? 0 }}</span
                       >
                       <button
                         class="bg-blue-700 hover:bg-blue-800 text-white py-2 px-4 rounded-lg"
-                        onclick="openCheckoutModal()"
+                        v-on:click="addToCart(product)"
                       >
                         Add to Cart
                       </button>
@@ -71,6 +71,20 @@ export default {
 
     this.products = productsResponse.data.data;
   },
+  methods: {
+    addToCart(product) {
+      const cartItems = JSON.parse(localStorage.getItem('cartItems')) ?? [];
+
+      if (! cartItems.find(item => item.product?.id === product.id)) {
+        cartItems.push({
+          product,
+          quantity: 1
+        })
+      }
+
+      localStorage.setItem('cartItems', JSON.stringify(cartItems))
+    }
+  }
 };
 </script>
 

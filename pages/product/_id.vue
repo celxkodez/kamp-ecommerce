@@ -243,11 +243,12 @@
             </div>
 
             <div class="flex justify-center items-center w-full">
-              <a
+              <button
                 class="p-2 w-full font-medium text-xl text-white text-center bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 hover:bg-blue-800 rounded-xl"
-                href="#"
+
+                @click="addToCart(product)"
               >
-                ADD TO CART</a
+                ADD TO CART</button
               >
             </div>
           </div>
@@ -317,6 +318,18 @@ export default {
   },
 
   methods: {
+    addToCart(product) {
+      const cartItems = JSON.parse(localStorage.getItem('cartItems')) ?? [];
+
+      if (! cartItems.find(item => item.product?.id === product.id)) {
+        cartItems.push({
+          product,
+          quantity: this.productQuantity
+        })
+      }
+
+      localStorage.setItem('cartItems', JSON.stringify(cartItems))
+    },
     rate(rating) {
       this.currentRating = rating;
     },
