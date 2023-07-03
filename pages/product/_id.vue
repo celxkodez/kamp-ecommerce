@@ -54,7 +54,7 @@
                 <a
                   class="text-sm font-medium text-indigo-500 hover:text-indigo-600"
                   href="#"
-                >{{product.name}}</a
+                  >{{ product.name }}</a
                 >
               </li>
             </ul>
@@ -131,17 +131,15 @@
           </div>
           <div class="w-full lg:w-1/2 px-4">
             <div class="max-w-md mb-2">
-              <h4 class="text-sm mb-3 text-gray-400 tracking-wider">
-                Product
-              </h4>
+              <h4 class="text-sm mb-3 text-gray-400 tracking-wider">Product</h4>
               <h2
                 class="mb-3 text-5xl md:text-7xl lg:text-4xl font-heading font-medium"
               >
-                {{product.name}}
+                {{ product.name }}
               </h2>
               <p class="text-3xl text-blue-500 font-medium mb-2">$44.90</p>
               <p class="text-lg text-gray-600">
-                {{product.description}}
+                {{ product.description }}
               </p>
             </div>
             <div class="flex mb-3 items-center">
@@ -166,7 +164,9 @@
                 </svg>
               </button>
 
-              <span class="text-md text-gray-400">{{ currentRating - 1 }}.0</span>
+              <span class="text-md text-gray-400"
+                >{{ currentRating - 1 }}.0</span
+              >
             </div>
             <div class="mb-6">
               <h4 class="mb-3 font-heading font-medium">
@@ -179,7 +179,10 @@
                   :key="index"
                   class="mr-2 border border-gray-300 rounded-full p-1"
                 >
-                  <div class="h-6 w-6 rounded-full" :class="`bg-${color}`"></div>
+                  <div
+                    class="h-6 w-6 rounded-full"
+                    :class="`bg-${color}`"
+                  ></div>
                 </button>
               </div>
             </div>
@@ -244,31 +247,34 @@
 
             <div class="flex justify-center items-center w-full">
               <a
-                class="p-2 w-full font-medium text-xl text-white text-center bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 hover:bg-blue-800 rounded-xl"
+                class="p-2 w-full text-center justify-center flex items-center font-medium text-xl text-white text-center bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 hover:bg-blue-800 rounded-xl"
                 href="#"
               >
+                <span class="material-icons mr-2"> shopping_cart </span>
                 ADD TO CART</a
               >
             </div>
           </div>
         </div>
         <div class="w-full bg-white drop-shadow-lg mt-10 rounded-lg">
-          <h2 class="border-b-2 p-6 border-gray-400 text-xl">Product details</h2>
+          <h2 class="border-b-2 p-6 border-gray-400 text-xl">
+            Product details
+          </h2>
           <div class="w-full p-6">
             <p class="font-normal text-gray-600">
               <span class="font-bold text-gray-700">iPhone 12pro: </span>Lorem
-              ipsum dolor sit amet, consectetur adipisicing elit. Dolorum expedita
-              cumque neque quas, repellat sit perferendis perspiciatis reiciendis
-              et harum excepturi quibusdam, asperiores possimus corrupti
-              voluptatibus modi nihil non odit!
+              ipsum dolor sit amet, consectetur adipisicing elit. Dolorum
+              expedita cumque neque quas, repellat sit perferendis perspiciatis
+              reiciendis et harum excepturi quibusdam, asperiores possimus
+              corrupti voluptatibus modi nihil non odit!
             </p>
             <div class="w-full">
               <h4 class="font-bold text-gray-700">Description:</h4>
               <ul class="list-disc mx-6">
                 <li>
-                  Super good service：we use only the highest-grade materials, so
-                  we do have the confidence to provide industry-leading 3 years
-                  warranty.
+                  Super good service：we use only the highest-grade materials,
+                  so we do have the confidence to provide industry-leading 3
+                  years warranty.
                 </li>
                 <li>
                   High-speed Charging：Outpace your mates and charge 1.4x faster
@@ -348,7 +354,6 @@ export default {
       throw { statusCode: 404, message: productResponse.data?.message };
     }
     this.product = productResponse.data.data;
-
   },
 };
 </script>

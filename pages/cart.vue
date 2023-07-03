@@ -1,5 +1,8 @@
 <template>
-  <section class="pt-12 pb-24 overflow-hidden bg-blueGray-100">
+  <section
+    style="background: #eeeeee"
+    class="pt-24 pb-32 overflow-hidden bg-blueGray-100"
+  >
     <div class="container px-4 mx-auto">
       <ul class="flex flex-wrap items-center mb-10 xl:mb-0">
         <li class="mr-6">
@@ -52,166 +55,141 @@
           >
         </li>
       </ul>
-      <div class="mb-8 pb-8 border-b border-gray-200 border-opacity-40">
-        <h1 class="text-center text-9xl xl:text-10xl font-heading font-medium">
-          Your cart
+      <div class="mb-10 pb-8 border-b-4 border-gray-500 border-opacity-40">
+        <h1 class="text-center text-5xl xl:text-10xl font-heading font-medium">
+          Cart
         </h1>
       </div>
-      <div class="flex flex-wrap -mx-4 mb-14 xl:mb-24">
-        <div class="w-full md:w-8/12 xl:w-9/12 px-4 mb-14 md:mb-0">
-          <div class="py-12 px-8 md:px-12 bg-white rounded-3xl">
-            <span class="inline-block mb-16 text-darkBlueGray-300 font-medium"
-              >3 products</span
-            >
-            <div class="xl:px-10">
-              <div
-                class="relative flex flex-wrap items-center xl:justify-between -mx-4 mb-8 pb-8 border-b border-gray-200 border-opacity-40"
-              >
-                <div class="relative w-full md:w-auto px-4 mb-6 xl:mb-0">
-                  <a class="block mx-auto max-w-max" href="#">
-                    <img
-                      class="h-28 object-cover rounded-l-lg"
-                      src="https://i.pcmag.com/imagery/roundups/07ml3nh3QrzTLZ9UycfQQB2-49..v1668971764.jpg"
-                      alt=""
-                    />
-                  </a>
-                </div>
-                <div class="w-full md:w-auto px-4 mb-6 xl:mb-0">
+      <div class="flex flex-wrap mb-0 md:mb-14">
+        <div
+          class="w-full md:w-8/12 xl:w-9/12 p-8 md:p-10 mb-14 md:mb-0 bg-white rounded-3xl"
+        >
+          <h3 class="mb-10 text-darkBlueGray-300 font-medium">3 products</h3>
+          <div class="max-h-[85vh] w-full overflow-y-auto no-scrollbar">
+            <div class="mb-8 pb-2 border-b-2 border-gray-200">
+              <div class="flex w-full flex-col md:flex-row mb-4">
+                <img
+                  class="h-40 w-full md:w-[38%] object-cover rounded-lg"
+                  src="https://i.pcmag.com/imagery/roundups/07ml3nh3QrzTLZ9UycfQQB2-49..v1668971764.jpg"
+                  alt=""
+                />
+                <div class="w-full md:w-[60%] md:px-4">
                   <a
-                    class="block mb-5 text-xl font-heading font-medium hover:underline"
+                    class="block text-xl font-heading font-medium hover:text-blue-500"
                     href="#"
-                    >Apple iPhone 12 Pro (128GB)</a
-                  >
-                  <div class="flex flex-wrap">
+                    >Apple iPhone 12 Pro (128GB)
+                  </a>
+                  <div class="flex flex-wrap my-3">
                     <p class="mr-4 text-sm font-medium">
-                      <span class="font-heading">Color:</span>
+                      Color:
                       <span class="ml-2 text-gray-400">Silver</span>
                     </p>
                     <p class="text-sm font-medium">
-                      <span>Memory storage:</span>
+                      Memory storage:
                       <span class="ml-2 text-gray-400">128GB</span>
                     </p>
                   </div>
-                </div>
-
-                <div class="flex justify-between items-center mb-6 w-full">
-                  <div
-                    class="px-3 py-2 w-[40%] justify-between text-center flex bg-white"
-                  >
-                    <button
-                      @click="productQuantity--"
-                      class="border-2 border-blue-500 rounded text-blue-500 hover:text-white hover:bg-blue-500"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="3"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="h-6 w-6"
-                      >
-                        <path d="M5 12h14" />
-                      </svg>
-                    </button>
-                    <input
-                      v-model="productQuantity"
-                      type="number"
-                      class="number-input w-10 outline-none focus:none"
-                    />
-                    <button
-                      @click="productQuantity++"
-                      class="border-2 border-blue-500 rounded text-blue-500 hover:text-white hover:bg-blue-500"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="3"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="h-6 w-6"
-                      >
-                        <path d="M12 5v14M5 12h14" />
-                      </svg>
-                    </button>
-                  </div>
+                  <h2 class="text-sm font-medium text-gray-400 mb-3">
+                    In Stock
+                  </h2>
                   <h2 class="text-xl font-medium text-blue-500">$544.90</h2>
                 </div>
+              </div>
 
+              <div class="flex justify-between items-center mb-6 w-full">
                 <button
-                  class="absolute top-0 right-0 lg:mt-6 lg:-mr-4 text-blue-500 hover:text-blue-600"
+                  class="text-blue-500 flex items-center hover:text-blue-600 font-semibold"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                    <path
-                      fill="currentColor"
-                      d="M416 80h-88V48c0-26.5-21.5-48-48-48h-96c-26.5 0-48 21.5-48 48v32H32c-17.7 0-32 14.3-32 32v32c0 8.8 7.2 16 16 16h16v320c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V176h16c8.8 0 16-7.2 16-16v-32c0-17.7-14.3-32-32-32zm-64-32h-96v-32h96v32zm-192 0v-32h96v32h-96zm176 464H96V176h256v336z"
-                    ></path>
-                  </svg>
-
+                  <span class="material-icons">delete</span>
                   REMOVE
                 </button>
+                <div class="justify-between text-center flex bg-white">
+                  <button
+                    @click="productQuantity--"
+                    class="border-2 border-blue-500 rounded text-blue-500 hover:text-white hover:bg-blue-500 mr-3"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="h-6 w-6"
+                    >
+                      <path d="M5 12h14" />
+                    </svg>
+                  </button>
+                  <input
+                    v-model="productQuantity"
+                    type="number"
+                    class="number-input w-6 outline-none focus:none"
+                  />
+                  <button
+                    @click="productQuantity++"
+                    class="border-2 border-blue-500 rounded text-blue-500 hover:text-white hover:bg-blue-500 ml-3"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="h-6 w-6"
+                    >
+                      <path d="M12 5v14M5 12h14" />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="w-full md:w-4/12 xl:w-3/12 px-4">
-          <div class="mb-14">
-            <h2 class="mb-7 md:mt-6 text-3xl font-heading font-medium">
-              Cart summary
-            </h2>
-            <div
-              class="flex items-center justify-between py-4 px-10 mb-3 leading-8 bg-white bg-opacity-50 font-heading font-medium rounded-3xl"
-            >
-              <span>Subtotal</span>
-              <span class="flex items-center text-xl">
-                <span class="mr-2 text-base">$</span>
-                <span>710,70</span>
-              </span>
-            </div>
-            <div
-              class="flex items-center justify-between py-4 px-10 mb-3 leading-8 bg-white bg-opacity-50 font-heading font-medium rounded-3xl"
-            >
-              <span>Shipping</span>
-              <span class="flex items-center text-xl">
-                <span class="mr-2 text-base">$</span>
-                <span>10,00</span>
-              </span>
-            </div>
-            <div
-              class="flex items-center justify-between py-4 px-10 mb-6 leading-8 bg-white font-heading font-medium rounded-3xl"
-            >
-              <span>Total</span>
-              <span class="flex items-center text-xl text-blue-500">
-                <span class="mr-2 text-base">$</span>
-                <span>720,70</span>
-              </span>
-            </div>
-            <a
-              class="inline-block w-full lg:w-auto py-5 px-10 text-xl leading-6 text-white font-medium tracking-tighter font-heading text-center bg-blue-500 hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-xl"
-              href="#"
-              >Checkout</a
-            >
-          </div>
-          <div class="text-center md:text-left">
-            <img
-              class="block mb-9 mx-auto md:ml-0"
-              src="uinel-assets/images/ecommerce-cart/procents.svg"
-              alt=""
-            />
-            <h4 class="mb-5 text-8xl font-heading font-medium">Shipping</h4>
-            <p class="lg:pr-10 text-lg text-darkBlueGray-300">
-              The nulla commodo, commodo eros.
+        <div class="w-full md:w-4/12 xl:w-3/12 px-8 mb-8">
+          <h2 class="mb-7 md:mt-6 text-3xl font-heading font-medium">
+            Cart summary
+          </h2>
+          <div
+            class="flex items-center justify-between py-4 px-10 mb-3 leading-8 bg-white bg-opacity-50 font-heading font-medium rounded-3xl"
+          >
+            <p>Subtotal</p>
+            <p class="flex items-center text-xl">
+              <span class="mr-2">$</span>
+              710,70
             </p>
           </div>
+          <div
+            class="flex items-center justify-between py-4 px-10 mb-3 leading-8 bg-white bg-opacity-50 font-medium rounded-3xl"
+          >
+            <p>Shipping</p>
+            <p class="flex items-center text-xl">
+              <span class="mr-2">$</span>
+              10,00
+            </p>
+          </div>
+          <div
+            class="flex w-full items-center justify-between bg-white py-4 px-10 mb-6 rounded-3xl"
+          >
+            <p class="font-semibold">Total</p>
+
+            <p class="flex items-center font-semibold text-xl text-blue-500">
+              <span class="mr-2">$</span>720,70
+            </p>
+          </div>
+          <a
+            class="inline-block w-full py-3 px-10 text-xl leading-6 text-white font-medium tracking-tighter font-heading text-center bg-blue-500 hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-xl"
+            href="#"
+            >Checkout</a
+          >
         </div>
       </div>
       <div class="md:w-96">
         <a
-          class="block py-5 px-10 w-full text-xl leading-6 font-medium tracking-tighter font-heading text-center bg-white hover:bg-gray-50 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-xl"
-          href="#"
+          class="block py-5 px-10 w-full text-xl leading-6 font-medium tracking-tighter font-heading text-center bg-white hover:bg-blue-600 hover:text-white rounded-xl"
+          href="/products"
           >Back to shop</a
         >
       </div>
@@ -236,5 +214,16 @@ export default {
 .number-input::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 </style>
