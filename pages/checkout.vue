@@ -78,6 +78,51 @@
             <div class="text-start my-3">
               <label class="block">
                   <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+                    Customer Email
+                  </span>
+                <input type="text" required v-model="email" name="customer_email" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="Email" />
+              </label>
+            </div>
+
+            <div class="text-start my-3">
+              <label class="block">
+                  <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+                    Customer Phone
+                  </span>
+                <input type="text" required v-model="phone" name="customer_phone" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="+1999999999" />
+              </label>
+            </div>
+
+            <div class="text-start my-3">
+              <label class="block">
+                  <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+                    Customer Location
+                  </span>
+                <input type="text" required v-model="customerLocation" name="customer_location" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="Main Warehouse" />
+              </label>
+            </div>
+
+            <div class="text-start my-3">
+              <label class="block">
+                  <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+                    Delivery Date
+                  </span>
+                <input type="date" required v-model="deliveryDate" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="01/1/1990" />
+              </label>
+            </div>
+
+            <div class="text-start my-3">
+              <label class="block">
+                  <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+                    Delivery Window
+                  </span>
+                <input type="text" required v-model="deliveryWindow" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="Morning" />
+              </label>
+            </div>
+
+            <div class="text-start my-3">
+              <label class="block">
+                  <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                     Customer Address
                   </span>
                 <input type="text" required v-model="customerAddress" name="customer_address" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="Celestine Stephen" />
@@ -104,6 +149,11 @@ export default {
       productQuantity: 1,
       customerName: '',
       customerAddress: '',
+      customerLocation: '',
+      deliveryWindow: '',
+      deliveryDate: '',
+      email: '',
+      phone: '',
     };
   },
   computed: {
@@ -124,19 +174,36 @@ export default {
   },
   methods: {
     async checkout() {
-      const orders = JSON.parse(localStorage.getItem('cartItems')) ?? [];
-      const formData = {
-        customer_name: this.customerName,
-        customer_address: this.customerAddress,
-        orders
-      }
-      if (orders.length) {
-        const checkout = await this.$axios.post(`/shop/checkout`, formData);
+      try {
+        const orders = JSON.parse(localStorage.getItem('cartItems')) ?? [];
+        let totalamount = 0;
+        orders.forEach(order => {
+          totalamount += order.quantity * (order.product.price ?? 0)
+        })
 
-        console.log(checkout)
-        if (checkout.data.status) {
-          this.$route.push('/products')
+        const formData = {
+          customer_name: this.customerName,
+          route: this.customerAddress,
+          customer_address: this.customerAddress,
+          email: this.email,
+          customer_number: this.phone,
+          delivery_window: this.deliveryWindow,
+          customer_location: this.customerLocation,
+          delivery_date: this.deliveryDate,
+          orders,
+          totalamount
         }
+        if (orders.length) {
+          const checkout = await this.$axios.post(`/shop/checkout`, formData);
+
+          console.log(checkout)
+          if (checkout.data.status) {
+            localStorage.removeItem('cartItems')
+            await this.$router.push('/products')
+          }
+        }
+      } catch (e) {
+        console.log('error', e)
       }
     }
   }

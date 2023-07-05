@@ -154,31 +154,31 @@
             <h2 class="mb-7 md:mt-6 text-3xl font-heading font-medium">
               Cart summary
             </h2>
-            <div
-              class="flex items-center justify-between py-4 px-10 mb-3 leading-8 bg-white bg-opacity-50 font-heading font-medium rounded-3xl"
-            >
-              <p>Subtotal</p>
-              <p class="flex items-center text-xl">
-                <span class="mr-2">$</span>
-                710,70
-              </p>
-            </div>
-            <div
-              class="flex items-center justify-between py-4 px-10 mb-3 leading-8 bg-white bg-opacity-50 font-medium rounded-3xl"
-            >
-              <p>Shipping</p>
-              <p class="flex items-center text-xl">
-                <span class="mr-2">$</span>
-                10,00
-              </p>
-            </div>
+<!--            <div-->
+<!--              class="flex items-center justify-between py-4 px-10 mb-3 leading-8 bg-white bg-opacity-50 font-heading font-medium rounded-3xl"-->
+<!--            >-->
+<!--              <p>Total Amount</p>-->
+<!--              <p class="flex items-center text-xl">-->
+<!--                <span class="mr-2">$</span>-->
+<!--                {{ totalAmount }}-->
+<!--              </p>-->
+<!--            </div>-->
+<!--            <div-->
+<!--              class="flex items-center justify-between py-4 px-10 mb-3 leading-8 bg-white bg-opacity-50 font-medium rounded-3xl"-->
+<!--            >-->
+<!--              <p>Shipping</p>-->
+<!--              <p class="flex items-center text-xl">-->
+<!--                <span class="mr-2">$</span>-->
+<!--                10,00-->
+<!--              </p>-->
+<!--            </div>-->
             <div
               class="flex w-full items-center justify-between bg-white py-4 px-10 mb-6 rounded-3xl"
             >
               <p class="font-semibold">Total</p>
 
               <p class="flex items-center font-semibold text-xl text-blue-500">
-                <span class="mr-2">$</span>720,70
+                <span class="mr-2">KES</span>{{ totalAmount }}
               </p>
             </div>
             <a
@@ -232,6 +232,14 @@ export default {
 
       return 0;
     },
+    totalAmount() {
+      let totalAmount = 0;
+      this.cartItems.forEach(order => {
+        totalAmount += order.quantity * (order.product.price ?? 0)
+      })
+
+      return totalAmount
+    }
   },
   methods: {
     removeItem(item) {
