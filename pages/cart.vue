@@ -67,7 +67,7 @@
           >
             <h3 class="mb-10 text-darkBlueGray-300 font-medium">{{totalItems}} products</h3>
             <div class="max-h-[85vh] w-full overflow-y-auto no-scrollbar">
-              <div v-for="item in cartItems" :key="item.product.id" class="mb-8 pb-2 border-b-2 border-gray-200">
+              <div v-for="(item, index) in cartItems" :key="item.product.id" class="mb-8 pb-2 border-b-2 border-gray-200">
                 <div class="flex w-full flex-col md:flex-row mb-4">
                   <img
                     class="h-40 w-full md:w-[38%] object-cover rounded-lg"
@@ -107,7 +107,7 @@
                   </button>
                   <div class="justify-between text-center flex bg-white">
                     <button
-                      @click="item.quantity--"
+                      @click="mutateQuantity(index, 'decrement')"
                       class="border-2 border-blue-500 rounded text-blue-500 hover:text-white hover:bg-blue-500 mr-3"
                     >
                       <svg
@@ -129,7 +129,7 @@
                       class="number-input w-6 outline-none focus:none"
                     />
                     <button
-                      @click="item.quantity++"
+                      @click="mutateQuantity(index, 'increment')"
                       class="border-2 border-blue-500 rounded text-blue-500 hover:text-white hover:bg-blue-500 ml-3"
                     >
                       <svg
@@ -214,7 +214,7 @@ export default {
   watch: {
     cartItems: {
       handler(val){
-        localStorage.setItem('cartItems', JSON.stringify(this.cartItems))
+        localStorage.setItem('cartItems', JSON.stringify( this.cartItems))
       },
       deep: true
     }
@@ -246,7 +246,17 @@ export default {
       this.cartItems = this.cartItems.filter(order => order.product.id !== item.product.id)
 
       localStorage.setItem('cartItems', JSON.stringify(this.cartItems))
-    }
+    },
+    mutateQuantity(index, direction) {
+      if (direction === 'increment') {
+        this.cartItems[index].quantity += 1
+      } else {
+        this.cartItems[index].quantity -= 1
+      }
+      if (this.cartItems[index].quantity < 1) {
+        this.cartItems = this.cartItems.filter(item => item.quantity > 0)
+      }
+    },
   }
 };
 </script>

@@ -68,8 +68,7 @@
                 <a
                   href="/products"
                   class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                  >Products</a
-                >
+                  >Shop</a>
               </li>
               <li>
                 <a
@@ -152,7 +151,7 @@
 
                   <!-- Text -->
                   <span class="text-xs mb-2 transition-all duration-200">
-                    Products
+                    Shop
                   </span>
 
                   <!-- Focus Dot -->

@@ -72,61 +72,61 @@
                 </p>
               </div>
 
-              <div
-                class="w-full px-4 justify-between flex items-center justify-center"
-              >
-                <a
-                  class="inline-block mx-3 transform -rotate-90 hover:text-darkBlueGray-400"
-                  href="#"
-                  @click="prevImage"
-                >
-                  <svg
-                    width="12"
-                    height="8"
-                    viewbox="0 0 12 8"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                  >
-                    <path
-                      d="M1.54064 7.21015C1.18719 7.59662 0.615928 7.59662 0.265087 7.21015C-0.087058 6.82369 -0.0896663 6.19929 0.265087 5.81282L5.36206 0.289847C5.71421 -0.0966173 6.28416 -0.0966172 6.63892 0.289847L11.7359 5.81282C12.088 6.19785 12.088 6.82369 11.7359 7.21015C11.3824 7.59662 10.8112 7.59662 10.4603 7.21015L5.99853 2.68073L1.54064 7.21015Z"
-                      fill="currentColor"
-                    ></path>
-                  </svg>
-                </a>
+<!--              <div-->
+<!--                class="w-full px-4 justify-between flex items-center justify-center"-->
+<!--              >-->
+<!--                <a-->
+<!--                  class="inline-block mx-3 transform -rotate-90 hover:text-darkBlueGray-400"-->
+<!--                  href="#"-->
+<!--                  @click="prevImage"-->
+<!--                >-->
+<!--                  <svg-->
+<!--                    width="12"-->
+<!--                    height="8"-->
+<!--                    viewbox="0 0 12 8"-->
+<!--                    fill="none"-->
+<!--                    xmlns="http://www.w3.org/2000/svg"-->
+<!--                    class="h-6 w-6"-->
+<!--                  >-->
+<!--                    <path-->
+<!--                      d="M1.54064 7.21015C1.18719 7.59662 0.615928 7.59662 0.265087 7.21015C-0.087058 6.82369 -0.0896663 6.19929 0.265087 5.81282L5.36206 0.289847C5.71421 -0.0966173 6.28416 -0.0966172 6.63892 0.289847L11.7359 5.81282C12.088 6.19785 12.088 6.82369 11.7359 7.21015C11.3824 7.59662 10.8112 7.59662 10.4603 7.21015L5.99853 2.68073L1.54064 7.21015Z"-->
+<!--                      fill="currentColor"-->
+<!--                    ></path>-->
+<!--                  </svg>-->
+<!--                </a>-->
 
-                <div class="flex overflow-x-auto w-30">
-                  <div
-                    @click="selectImage(image)"
-                    v-for="(image, index) in productImages"
-                    :key="index"
-                    class="h-20 w-20 mx-2 cursor-pointer"
-                    href="#"
-                  >
-                    <img class="h-full rounded-xl w-full" :src="image" alt="" />
-                  </div>
-                </div>
+<!--                <div class="flex overflow-x-auto w-30">-->
+<!--                  <div-->
+<!--                    @click="selectImage(image)"-->
+<!--                    v-for="(image, index) in productImages"-->
+<!--                    :key="index"-->
+<!--                    class="h-20 w-20 mx-2 cursor-pointer"-->
+<!--                    href="#"-->
+<!--                  >-->
+<!--                    <img class="h-full rounded-xl w-full" :src="image" alt="" />-->
+<!--                  </div>-->
+<!--                </div>-->
 
-                <a
-                  class="mx-3 transform -rotate-90 hover:text-darkBlueGray-400"
-                  href="#"
-                  @click="nextImage"
-                >
-                  <svg
-                    width="12"
-                    height="8"
-                    viewbox="0 0 12 8"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                  >
-                    <path
-                      d="M10.4594 0.289849C10.8128 -0.0966154 11.3841 -0.0966154 11.7349 0.289849C12.0871 0.676313 12.0897 1.30071 11.7349 1.68718L6.63794 7.21015C6.28579 7.59662 5.71584 7.59662 5.36108 7.21015L0.264109 1.68718C-0.0880364 1.30215 -0.0880363 0.676312 0.264109 0.289848C0.617558 -0.096616 1.18882 -0.0966159 1.53966 0.289848L6.00147 4.81927L10.4594 0.289849Z"
-                      fill="currentColor"
-                    ></path>
-                  </svg>
-                </a>
-              </div>
+<!--                <a-->
+<!--                  class="mx-3 transform -rotate-90 hover:text-darkBlueGray-400"-->
+<!--                  href="#"-->
+<!--                  @click="nextImage"-->
+<!--                >-->
+<!--                  <svg-->
+<!--                    width="12"-->
+<!--                    height="8"-->
+<!--                    viewbox="0 0 12 8"-->
+<!--                    fill="none"-->
+<!--                    xmlns="http://www.w3.org/2000/svg"-->
+<!--                    class="h-6 w-6"-->
+<!--                  >-->
+<!--                    <path-->
+<!--                      d="M10.4594 0.289849C10.8128 -0.0966154 11.3841 -0.0966154 11.7349 0.289849C12.0871 0.676313 12.0897 1.30071 11.7349 1.68718L6.63794 7.21015C6.28579 7.59662 5.71584 7.59662 5.36108 7.21015L0.264109 1.68718C-0.0880364 1.30215 -0.0880363 0.676312 0.264109 0.289848C0.617558 -0.096616 1.18882 -0.0966159 1.53966 0.289848L6.00147 4.81927L10.4594 0.289849Z"-->
+<!--                      fill="currentColor"-->
+<!--                    ></path>-->
+<!--                  </svg>-->
+<!--                </a>-->
+<!--              </div>-->
             </div>
           </div>
           <div class="w-full lg:w-1/2 px-4">
@@ -137,55 +137,55 @@
               >
                 {{ product.name }}
               </h2>
-              <p class="text-3xl text-blue-500 font-medium mb-2">$44.90</p>
+              <p class="text-3xl text-blue-500 font-medium mb-2">KES {{ product.price }}</p>
               <p class="text-lg text-gray-600">
                 {{ product.description }}
               </p>
             </div>
-            <div class="flex mb-3 items-center">
-              <button
-                v-for="index in stars"
-                :key="index"
-                class="mr-3"
-                @click="rate(index + 1)"
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  :class="{ active: index < currentRating }"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M20 7.91679H12.4167L10 0.416779L7.58333 7.91679H0L6.18335 12.3168L3.81668 19.5835L10 15.0835L16.1834 19.5835L13.8167 12.3168L20 7.91679Z"
-                    :fill="index < currentRating ? activeColor : inactiveColor"
-                  ></path>
-                </svg>
-              </button>
+<!--            <div class="flex mb-3 items-center">-->
+<!--              <button-->
+<!--                v-for="index in stars"-->
+<!--                :key="index"-->
+<!--                class="mr-3"-->
+<!--                @click="rate(index + 1)"-->
+<!--              >-->
+<!--                <svg-->
+<!--                  width="20"-->
+<!--                  height="20"-->
+<!--                  viewBox="0 0 20 20"-->
+<!--                  fill="none"-->
+<!--                  :class="{ active: index < currentRating }"-->
+<!--                  xmlns="http://www.w3.org/2000/svg"-->
+<!--                >-->
+<!--                  <path-->
+<!--                    d="M20 7.91679H12.4167L10 0.416779L7.58333 7.91679H0L6.18335 12.3168L3.81668 19.5835L10 15.0835L16.1834 19.5835L13.8167 12.3168L20 7.91679Z"-->
+<!--                    :fill="index < currentRating ? activeColor : inactiveColor"-->
+<!--                  ></path>-->
+<!--                </svg>-->
+<!--              </button>-->
 
-              <span class="text-md text-gray-400"
-                >{{ currentRating - 1 }}.0</span
-              >
-            </div>
-            <div class="mb-6">
-              <h4 class="mb-3 font-heading font-medium">
-                Color:
-                <span class="text-gray-600 ml-1">Silver</span>
-              </h4>
-              <div class="flex">
-                <button
-                  v-for="(color, index) in productColors"
-                  :key="index"
-                  class="mr-2 border border-gray-300 rounded-full p-1"
-                >
-                  <div
-                    class="h-6 w-6 rounded-full"
-                    :class="`bg-${color}`"
-                  ></div>
-                </button>
-              </div>
-            </div>
+<!--              <span class="text-md text-gray-400"-->
+<!--                >{{ currentRating - 1 }}.0</span-->
+<!--              >-->
+<!--            </div>-->
+<!--            <div class="mb-6">-->
+<!--              <h4 class="mb-3 font-heading font-medium">-->
+<!--                Color:-->
+<!--                <span class="text-gray-600 ml-1">Silver</span>-->
+<!--              </h4>-->
+<!--              <div class="flex">-->
+<!--                <button-->
+<!--                  v-for="(color, index) in productColors"-->
+<!--                  :key="index"-->
+<!--                  class="mr-2 border border-gray-300 rounded-full p-1"-->
+<!--                >-->
+<!--                  <div-->
+<!--                    class="h-6 w-6 rounded-full"-->
+<!--                    :class="`bg-${color}`"-->
+<!--                  ></div>-->
+<!--                </button>-->
+<!--              </div>-->
+<!--            </div>-->
             <div class="flex justify-between items-center mb-6">
               <div
                 class="px-3 py-2 w-[40%] justify-between text-center flex bg-white border-2 border-blue-500 outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-xl"
@@ -251,9 +251,10 @@
 
 
                 @click="addToCart(product)"
+                :disabled="isAdded"
               >
                 <span class="material-icons mr-2"> shopping_cart </span>
-                ADD TO CART</button>
+                {{isAdded ? 'IN CART!' : 'ADD TO CART'}}</button>
             </div>
           </div>
         </div>
@@ -263,34 +264,30 @@
           </h2>
           <div class="w-full p-6">
             <p class="font-normal text-gray-600">
-              <span class="font-bold text-gray-700">iPhone 12pro: </span>Lorem
-              ipsum dolor sit amet, consectetur adipisicing elit. Dolorum
-              expedita cumque neque quas, repellat sit perferendis perspiciatis
-              reiciendis et harum excepturi quibusdam, asperiores possimus
-              corrupti voluptatibus modi nihil non odit!
+              {{ product.description}}
             </p>
-            <div class="w-full">
-              <h4 class="font-bold text-gray-700">Description:</h4>
-              <ul class="list-disc mx-6">
-                <li>
-                  Super good service：we use only the highest-grade materials,
-                  so we do have the confidence to provide industry-leading 3
-                  years warranty.
-                </li>
-                <li>
-                  High-speed Charging：Outpace your mates and charge 1.4x faster
-                  through our exclusive UPower+ technology. Support charging and
-                  discharging simultaneously.
-                </li>
-              </ul>
-            </div>
-            <div class="w-full">
-              <h4 class="font-bold text-gray-700">General specs:</h4>
-              <ul class="list-disc mx-6">
-                <li>Brand: Floveme</li>
-                <li>Model: P2W</li>
-              </ul>
-            </div>
+<!--            <div class="w-full">-->
+<!--              <h4 class="font-bold text-gray-700">Description:</h4>-->
+<!--              <ul class="list-disc mx-6">-->
+<!--                <li>-->
+<!--                  Super good service：we use only the highest-grade materials,-->
+<!--                  so we do have the confidence to provide industry-leading 3-->
+<!--                  years warranty.-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                  High-speed Charging：Outpace your mates and charge 1.4x faster-->
+<!--                  through our exclusive UPower+ technology. Support charging and-->
+<!--                  discharging simultaneously.-->
+<!--                </li>-->
+<!--              </ul>-->
+<!--            </div>-->
+<!--            <div class="w-full">-->
+<!--              <h4 class="font-bold text-gray-700">General specs:</h4>-->
+<!--              <ul class="list-disc mx-6">-->
+<!--                <li>Brand: Floveme</li>-->
+<!--                <li>Model: P2W</li>-->
+<!--              </ul>-->
+<!--            </div>-->
           </div>
         </div>
       </div>
@@ -299,6 +296,8 @@
 </template>
 
 <script>
+import {isA} from "@jest/expect-utils";
+
 export default {
   name: "IndexPage",
   layout: "app",
@@ -320,9 +319,31 @@ export default {
       inactiveColor: "#C1C9D3",
       productColors: ["white", "orange-800", "blue-900", "yellow-500"],
       productQuantity: 1,
+      isAdded: false,
+      cartItems: [],
     };
   },
+  watch: {
+    productQuantity(val) {
+      if (process.client) {
+        const cartItems = this.cartItems.filter(item => item.product.id !== this.product.id)
 
+        if (this.productQuantity > 0) {
+          cartItems.push({
+            product: this.product,
+            quantity: this.productQuantity
+          })
+
+          this.isAdded = true;
+
+        } else {
+          this.productQuantity = 1
+        }
+
+        localStorage.setItem('cartItems', JSON.stringify(cartItems))
+      }
+    }
+  },
   methods: {
     addToCart(product) {
       const cartItems = JSON.parse(localStorage.getItem('cartItems')) ?? [];
@@ -332,8 +353,10 @@ export default {
           product,
           quantity: this.productQuantity
         })
+
       }
 
+      this.isAdded = true;
       localStorage.setItem('cartItems', JSON.stringify(cartItems))
     },
     rate(rating) {
@@ -366,7 +389,19 @@ export default {
     if (!productResponse.data.status) {
       throw { statusCode: 404, message: productResponse.data?.message };
     }
+
     this.product = productResponse.data.data;
+
+    if (process.client) {
+
+      this.cartItems = JSON.parse(localStorage.getItem('cartItems')) ?? [];
+
+      this.isAdded = this.cartItems.find(item => item.product.id === this.product.id)
+
+      if (this.isAdded) {
+        this.productQuantity = this.isAdded.quantity
+      }
+    }
   },
 };
 </script>

@@ -19,7 +19,7 @@
           >
             <template v-for="product in products">
               <!-- Product Card -->
-              <NuxtLink :to="`/product/${product.id}`">
+              <NuxtLink style="z-index: 999" :to="`/product/${product.id}`">
                 <div class="bg-white rounded-lg shadow-lg card-hover">
                   <img
                     :src="product.image ?? staticImg"
@@ -36,6 +36,7 @@
                         >KES {{ product.price ?? 0 }}</span
                       >
                       <button
+                        style="z-index: 1000"
                         class="bg-blue-700 hover:bg-blue-800 text-white py-2 px-4 rounded-lg"
                         v-on:click="addToCart(product)"
                       >
