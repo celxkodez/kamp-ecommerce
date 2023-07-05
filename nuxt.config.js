@@ -38,7 +38,7 @@ export default {
   modules: [
     '@nuxtjs/pwa',
     '@nuxtjs/axios',
-    '@nuxtjs/toast',
+    // '@nuxtjs/toast',
     'nuxt-material-design-icons',
   ],
 
