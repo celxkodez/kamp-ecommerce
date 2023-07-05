@@ -58,5 +58,8 @@
 export default {
   name: "IndexPage",
   layout: "app",
+  created() {
+    this.$route.push('/products')
+  }
 };
 </script>

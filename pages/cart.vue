@@ -99,6 +99,7 @@
 
                 <div class="flex justify-between items-center mb-6 w-full">
                   <button
+                    @click="removeItem(item)"
                     class="text-blue-500 flex items-center hover:text-blue-600 font-semibold"
                   >
                     <span class="material-icons">delete</span>
@@ -106,7 +107,7 @@
                   </button>
                   <div class="justify-between text-center flex bg-white">
                     <button
-                      @click="productQuantity--"
+                      @click="item.quantity--"
                       class="border-2 border-blue-500 rounded text-blue-500 hover:text-white hover:bg-blue-500 mr-3"
                     >
                       <svg
@@ -123,12 +124,12 @@
                       </svg>
                     </button>
                     <input
-                      v-model="productQuantity"
+                      v-model="item.quantity"
                       type="number"
                       class="number-input w-6 outline-none focus:none"
                     />
                     <button
-                      @click="productQuantity++"
+                      @click="item.quantity++"
                       class="border-2 border-blue-500 rounded text-blue-500 hover:text-white hover:bg-blue-500 ml-3"
                     >
                       <svg
@@ -182,9 +183,9 @@
             </div>
             <a
               class="inline-block w-full py-3 px-10 text-xl leading-6 text-white font-medium tracking-tighter font-heading text-center bg-blue-500 hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-xl"
-              href="#"
-            >Checkout</a
-            >
+              href="/checkout"
+              type="button"
+            >Checkout</a>
           </div>
         </div>
         <div class="md:w-96">
@@ -205,8 +206,23 @@ export default {
   layout: "app",
   data() {
     return {
+      open: true,
+      cartItems: [],
       productQuantity: 1,
     };
+  },
+  watch: {
+    cartItems: {
+      handler(val){
+        localStorage.setItem('cartItems', JSON.stringify(this.cartItems))
+      },
+      deep: true
+    }
+  },
+  created() {
+    if (process.client) {
+      this.cartItems = JSON.parse(localStorage.getItem('cartItems')) ?? []
+    }
   },
   computed: {
     totalItems() {
@@ -216,12 +232,12 @@ export default {
 
       return 0;
     },
-    cartItems() {
-      if (process.client) {
-        return (JSON.parse(localStorage.getItem('cartItems')) ?? [])
-      }
+  },
+  methods: {
+    removeItem(item) {
+      this.cartItems = this.cartItems.filter(order => order.product.id !== item.product.id)
 
-      return [];
+      localStorage.setItem('cartItems', JSON.stringify(this.cartItems))
     }
   }
 };
