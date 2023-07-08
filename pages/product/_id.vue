@@ -64,7 +64,7 @@
               <div class="w-full mb-5 lg:h-[45vh] px-4">
                 <img
                   class="w-full mb-4 rounded-lg h-full"
-                  :src="selectedImage"
+                  :src="product.image ?? selectedImage"
                   alt=""
                 />
                 <p class="text-sm text-gray-300 md:hidden">

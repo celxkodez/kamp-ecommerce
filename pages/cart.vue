@@ -71,7 +71,7 @@
                 <div class="flex w-full flex-col md:flex-row mb-4">
                   <img
                     class="h-40 w-full md:w-[38%] object-cover rounded-lg"
-                    src="https://i.pcmag.com/imagery/roundups/07ml3nh3QrzTLZ9UycfQQB2-49..v1668971764.jpg"
+                    :src="item.product.image ?? 'https://i.pcmag.com/imagery/roundups/07ml3nh3QrzTLZ9UycfQQB2-49..v1668971764.jpg'"
                     alt=""
                   />
                   <div class="w-full md:w-[60%] md:px-4">
